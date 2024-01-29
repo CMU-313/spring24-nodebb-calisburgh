@@ -1,6 +1,6 @@
 # Contributors
 
-![]({-ActivityLocation-})
+![](https://raw.githubusercontent.com/CMU-313/spring24-nodebb-calisburgh/activity-resources/image.svg)
 
 
 # ![NodeBB](public/images/sm-card.png)
