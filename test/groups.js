@@ -603,6 +603,28 @@ describe('Groups', () => {
         });
     });
 
+    describe('.switch()', () => {
+
+        it('should switch a user to a new group', (done) => {
+            Groups.switch('Test', 'test-hidden1', testUid, (err) => {
+                assert.ifError(err);
+
+                Groups.isMember(testUid, 'Test', (err, isMember) => {
+                    assert.ifError(err);
+                    assert.strictEqual(false, isMember);
+
+                });
+                Groups.isMember(testUid, 'test-hidden1', (err, isMember) => {
+                    assert.ifError(err);
+                    assert.strictEqual(true, isMember);
+
+                    done();
+                });
+            });
+        });
+
+    })
+
     describe('.join()', () => {
         before((done) => {
             Groups.leave('Test', testUid, done);
