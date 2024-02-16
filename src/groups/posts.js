@@ -6,17 +6,17 @@ const privileges = require('../privileges');
 const posts = require('../posts');
 
 module.exports = function (Groups) {
-    //currently will add post to every group user is in
+    // currently will add post to every group user is in
     Groups.onNewPostMade = async function (postData) {
         if (!parseInt(postData.uid, 10)) {
             return;
         }
 
-        //getting all the group names the user is in
+        // getting all the group names the user is in
         // let groupName = postData.gid
         let groupNames = await Groups.getUserGroupMembership('groups:visible:createtime', [postData.uid]);
         groupNames = [groupNames[0][0]]; // list of all group names user is in
-        //would create dropdown to select specific group 
+        // would create dropdown to select specific group
         console.log(groupNames);
 
         // Only process those groups that have the cid in its memberPostCids setting (or no setting at all)
@@ -25,8 +25,8 @@ module.exports = function (Groups) {
             !groupData[idx].memberPostCidsArray.length ||
             groupData[idx].memberPostCidsArray.includes(postData.cid)
         ));
-        
-        //what does this do?
+
+        // what does this do?
         const keys = groupNames.map(groupName => `group:${groupName}:member:pids`);
         await db.sortedSetsAdd(keys, postData.timestamp, postData.pid);
         await Promise.all(groupNames.map(name => truncateMemberPosts(name)));
