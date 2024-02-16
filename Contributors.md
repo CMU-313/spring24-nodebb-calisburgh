@@ -24,18 +24,18 @@
                     <tr>
                         <th align="left">
                             <a href="https://github.com/CMU-313/spring24-nodebb-calisburgh/commits?author=0simoo&since=2024-01-20T00:00:00-05:00&until=2024-02-29T23:59:00-05:00">
-                            Commit: 1
+                            Commit: 2
                             </a>
                         </th>
                     </tr>
                     <tr>
                         <th align="left">
-                            Addition: 8
+                            Addition: 13
                         </th>
                     </tr>
                     <tr>
                         <th align="left">
-                            Deletion: 2
+                            Deletion: 7
                         </th>
                     <tr>
                     <tr>

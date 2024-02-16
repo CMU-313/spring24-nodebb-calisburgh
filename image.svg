@@ -29,7 +29,7 @@ Project 2 (2024-01-20-2024-02-29)
 </svg>
 <a xlink:href="https://github.com/CMU-313/spring24-nodebb-calisburgh/commits?author=0simoo&amp;since=2024-01-20T00:00:00-05:00&amp;until=2024-02-29T23:59:00-05:00">
 <text class="stat" x="25" y="12.5">
-Commit: 1
+Commit: 2
 </text>
 </a>
 </g>
@@ -38,7 +38,7 @@ Commit: 1
 <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" fill-rule="evenodd"/>
 </svg>
 <text class="stat" x="25" y="12.5">
-Addition: 8
+Addition: 13
 </text>
 </g>
 <g transform="translate(0, 50)">
@@ -46,7 +46,7 @@ Addition: 8
 <path d="M0 10h24v4h-24z" fill-rule="evenodd"/>
 </svg>
 <text class="stat" x="25" y="12.5">
-Deletion: 2
+Deletion: 7
 </text>
 </g>
 <g transform="translate(0, 75)">
