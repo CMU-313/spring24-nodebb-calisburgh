@@ -21,6 +21,7 @@ require('./user')(Groups);
 require('./join')(Groups);
 require('./leave')(Groups);
 require('./cache')(Groups);
+require('./switch')(Groups);
 
 Groups.BANNED_USERS = 'banned-users';
 
