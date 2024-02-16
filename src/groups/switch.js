@@ -9,6 +9,10 @@ module.exports = function (Groups) {
         assert(typeof (switchTo) === 'string');
         assert(typeof (uid) === 'number');
 
+        if (!switchTo) {
+            throw new Error('[[error:invalid-data]]');
+        }
+
         await Groups.leave(switchFrom, uid);
         await Groups.join(switchTo, uid);
     };
