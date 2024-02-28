@@ -100,11 +100,12 @@ module.exports = function (Posts) {
     }
 
     async function getUserData(uids, uid) {
+        //added accounttype to the list of returned fields 
         const fields = [
             'uid', 'username', 'fullname', 'userslug',
             'reputation', 'postcount', 'topiccount', 'picture',
             'signature', 'banned', 'banned:expire', 'status',
-            'lastonline', 'groupTitle', 'mutedUntil',
+            'lastonline', 'groupTitle', 'mutedUntil', 'accounttype',
         ];
         const result = await plugins.hooks.fire('filter:posts.addUserFields', {
             fields: fields,
