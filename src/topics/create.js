@@ -164,7 +164,7 @@ module.exports = function (Topics) {
             user.notifications.sendTopicNotificationToFollowers(uid, topicData, postData);
         }
 
-        let studentAnswerData = {
+/*         let studentAnswerData = {
             pid: number,
             tid: number,
             content: string,
@@ -182,7 +182,7 @@ module.exports = function (Topics) {
             replies: number
         }        
 
-        Topics.reply(studentAnswerData);
+        Topics.reply(studentAnswerData); */
 
         return {
             topicData: topicData,
