@@ -367,6 +367,12 @@ describe('Post\'s', () => {
             assert.strictEqual(isDeleted, 1);
         });
 
+        it('should have a gid', async () => {
+            await posts.setPostField(replyPid, 'gid', 42);
+            const gider = await posts.getPostField(replyPid, 'gid');
+            assert.strictEqual(parseInt(gider, 10), 42);
+        });
+
         it('should not see post content if global mod does not have posts:view_deleted privilege', (done) => {
             async.waterfall([
                 function (next) {

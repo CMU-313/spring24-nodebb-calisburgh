@@ -26,6 +26,7 @@ module.exports = function (Topics) {
             tid: tid,
             uid: data.uid,
             cid: data.cid,
+            gid: -1,
             mainPid: 0,
             title: data.title,
             slug: `${tid}/${slugify(data.title) || 'topic'}`,
