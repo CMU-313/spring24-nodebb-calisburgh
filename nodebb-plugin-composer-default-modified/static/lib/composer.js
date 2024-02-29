@@ -333,7 +333,7 @@ define('composer', [
 
 		submitBtn.on('click', function (e) {
 			e.preventDefault();
-			e.stopPropagation();	// Other click events bring composer back to active state which is undesired on submit
+			e.stopPropagation();// Other click events bring composer back to active state which is undesired on submit
 
 			$(this).attr('disabled', true);
 			post(post_uuid);
