@@ -322,6 +322,39 @@ describe('Post\'s', () => {
         });
     });
 
+    describe('groupID', () => {
+        async function createTopic() {
+            const topicPostData = await topics.post({
+                uid: voterUid,
+                cid: cid,
+                title: 'topic to test groupIDs',
+                content: 'A post to test groupIDs',
+            });
+
+            return topicPostData;
+        }
+
+        let tid;
+        let mainPid;
+
+        before(async () => {
+            const topicPostData = await createTopic();
+            tid = topicPostData.topicData.tid;
+            mainPid = topicPostData.postData.pid;
+            // await privileges.categories.give(['groups:purge'], cid, 'registered-users');
+        });
+
+        it('should have a gid', async () => {
+            await posts.setPostField(mainPid, 'gid', 42);
+            const gider = await posts.getPostField(mainPid, 'gid');
+            assert.strictEqual(parseInt(gider, 10), 42);
+
+            await posts.setPostField(mainPid, 'gid', 3);
+            const gider2 = await posts.getPostField(mainPid, 'gid');
+            assert.strictEqual(parseInt(gider2, 10), 3);
+        });
+    });
+
     describe('delete/restore/purge', () => {
         async function createTopicWithReply() {
             const topicPostData = await topics.post({
@@ -365,12 +398,6 @@ describe('Post\'s', () => {
             await apiPosts.delete({ uid: voterUid }, { pid: replyPid, tid: tid });
             const isDeleted = await posts.getPostField(replyPid, 'deleted');
             assert.strictEqual(isDeleted, 1);
-        });
-
-        it('should have a gid', async () => {
-            await posts.setPostField(replyPid, 'gid', 42);
-            const gider = await posts.getPostField(replyPid, 'gid');
-            assert.strictEqual(parseInt(gider, 10), 42);
         });
 
         it('should not see post content if global mod does not have posts:view_deleted privilege', (done) => {
