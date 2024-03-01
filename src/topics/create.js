@@ -29,8 +29,8 @@ module.exports = function (Topics) {
             toPid: 0,
             timestamp: Date.now(),
         };
-    }
-    
+    };
+
     Topics.create = async function (data) {
         // This is an internal method, consider using Topics.post instead
         const timestamp = data.timestamp || Date.now();
@@ -164,7 +164,7 @@ module.exports = function (Topics) {
             user.notifications.sendTopicNotificationToFollowers(uid, topicData, postData);
         }
 
-/*         let studentAnswerData = {
+        /*  let studentAnswerData = {
             pid: number,
             tid: number,
             content: string,
@@ -180,7 +180,7 @@ module.exports = function (Topics) {
             category: CategoryObject,
             isMainPost: boolean,
             replies: number
-        }        
+        }    
 
         Topics.reply(studentAnswerData); */
 
