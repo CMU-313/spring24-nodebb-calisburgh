@@ -78,7 +78,7 @@ define('composer/uploads', [
 					route: '/api/post/upload',
 					formData: upload.formData,
 				});
-			}
+			},
 		});
 	}
 
