@@ -47,3 +47,20 @@ To see Change:
 Run npm tests with ```npm run test``` or run the posts.js only with ```npm run test -- test/posts.js```
 The new field added to posts is being tested here. We set the gid field to two different numbers and check that when we retrieve the same field, we get the same number.
 I believe these tests are sufficient since they demonstrate that gid is indeed a field that belongs to posts and can be written to and read multiple times.
+
+#######
+
+4. Backend Feature: IN PROGRESS Students' Answer (Collaborative Comments)
+
+Overview: 
+A default, automatic reply should be made to a topic when it is first posted, to serve as a students' answer box
+
+Changes Made:
+Added default post creation data to src/topics/create.js
+Added (dysfunctional) function call to post creation method before topic creation method returns
+
+To see Change: (in progress)
+1. Log in as a student
+2. Go into a category
+3. Select 'New Topic'
+4. After posting the new topic, a students' answer default reply post should already exist
