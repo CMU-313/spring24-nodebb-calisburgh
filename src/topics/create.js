@@ -180,7 +180,7 @@ module.exports = function (Topics) {
             category: CategoryObject,
             isMainPost: boolean,
             replies: number
-        }    
+        }
 
         Topics.reply(studentAnswerData); */
 
