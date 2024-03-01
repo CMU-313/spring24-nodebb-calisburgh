@@ -67,7 +67,11 @@ export type TopicSlimProperties = {
   votes: string;
   teaserPid: number | string;
   thumbs: Thumb[];
+
   gid: number;
+
+  studentsAnswer: string;
+
 };
 
 export type Thumb = {

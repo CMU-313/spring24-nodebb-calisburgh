@@ -124,7 +124,7 @@ module.exports = function (Topics) {
             posts.hasBookmarked(pids, uid),
             posts.getVoteStatusByPostIDs(pids, uid),
             getPostUserData('uid', async uids => await posts.getUserInfoForPosts(uids, uid)),
-            getPostUserData('editor', async uids => await user.getUsersFields(uids, ['uid', 'username', 'userslug'])),
+            getPostUserData('editor', async uids => await user.getUsersFields(uids, ['uid', 'username', 'userslug', 'accounttype'])),
             getPostReplies(pids, uid),
             Topics.addParentPosts(postData),
         ]);
@@ -145,6 +145,7 @@ module.exports = function (Topics) {
                     postObj.user.username = validator.escape(String(postObj.handle));
                     postObj.user.displayname = postObj.user.username;
                 }
+                // sets accounttype to be displayed on front end
             }
         });
 
