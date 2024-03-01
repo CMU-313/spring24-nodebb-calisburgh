@@ -16,6 +16,21 @@ const categories = require('../categories');
 const translator = require('../translator');
 
 module.exports = function (Topics) {
+    // create a default post that is blank and can be used to generate a dummy reply
+    Topics.createDefaultPost = function (tid, uid, cid) {
+        return {
+            tid: tid,
+            uid: uid,
+            cid: cid,
+            content: '',
+            title: '',
+            handle: '',
+            ip: '',
+            toPid: 0,
+            timestamp: Date.now(),
+        };
+    };
+
     Topics.create = async function (data) {
         // This is an internal method, consider using Topics.post instead
         const timestamp = data.timestamp || Date.now();
@@ -148,6 +163,26 @@ module.exports = function (Topics) {
         if (parseInt(uid, 10) && !topicData.scheduled) {
             user.notifications.sendTopicNotificationToFollowers(uid, topicData, postData);
         }
+
+        /*  let studentAnswerData = {
+            pid: number,
+            tid: number,
+            content: string,
+            uid: number,
+            timestamp: number,
+            deleted: boolean,
+            upvotes: number,
+            downvotes: number,
+            votes: number,
+            timestampISO: string,
+            user: UserObjectSlim,
+            topic: TopicObject,
+            category: CategoryObject,
+            isMainPost: boolean,
+            replies: number
+        }
+
+        Topics.reply(studentAnswerData); */
 
         return {
             topicData: topicData,
