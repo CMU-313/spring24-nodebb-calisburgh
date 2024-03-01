@@ -156,7 +156,7 @@ define('composer/drafts', ['api', 'alerts'], function (api, alerts) {
 			open.push(save_id);
 		} else if (!add && idx !== -1) {
 			open.splice(idx, 1);
-		}// otherwise do nothing
+		} // otherwise do nothing
 
 		localStorage.setItem('drafts:' + set, JSON.stringify(open));
 	};

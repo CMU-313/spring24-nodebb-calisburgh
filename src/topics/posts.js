@@ -145,7 +145,6 @@ module.exports = function (Topics) {
                     postObj.user.username = validator.escape(String(postObj.handle));
                     postObj.user.displayname = postObj.user.username;
                 }
-                // postObj.user.accounttype = postObj.user.accounttype
                 // sets accounttype to be displayed on front end
             }
         });
