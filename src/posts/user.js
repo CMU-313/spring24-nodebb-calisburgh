@@ -100,7 +100,7 @@ module.exports = function (Posts) {
     }
 
     async function getUserData(uids, uid) {
-        //added accounttype to the list of returned fields 
+        // added accounttype to the list of returned fields
         const fields = [
             'uid', 'username', 'fullname', 'userslug',
             'reputation', 'postcount', 'topiccount', 'picture',
