@@ -1,4 +1,0 @@
-reporter: dot # For a more verbose display - spec
-timeout: 25000
-exit: true
-bail: true
