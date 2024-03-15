@@ -56,4 +56,5 @@ stage.addListener(Iroh.PROGRAM)
         console.log(`${' '.repeat(e.indent)}Program end`, '->', e.return);
     });
 
+/* eslint no-eval: 0 */
 eval(stage.script);
