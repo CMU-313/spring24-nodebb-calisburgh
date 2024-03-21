@@ -1,0 +1,10 @@
+Program
+ call factorial  ( [ 3 ] )
+  call factorial  ( [ 2 ] )
+   call factorial  ( [ 1 ] )
+    call factorial  ( [ 0 ] )
+    call factorial end  -> [ 1 ]
+   call factorial end  -> [ 1 ]
+  call factorial end  -> [ 2 ]
+ call factorial end  -> [ 6 ]
+Program end -> 6
