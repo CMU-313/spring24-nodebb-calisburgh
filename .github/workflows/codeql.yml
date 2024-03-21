@@ -15,7 +15,7 @@ on:
   push:
     branches: [ "testing-CodeQL" ]
   pull_request:
-    branches: [ "testing-CodeQL" ]
+    branches: [ "main" ]
 
 jobs:
   analyze:
